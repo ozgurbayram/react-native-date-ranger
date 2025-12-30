@@ -1,14 +1,24 @@
 # react-native-date-ranger
 
+[![npm version](https://img.shields.io/npm/v/react-native-date-ranger.svg)](https://www.npmjs.com/package/react-native-date-ranger)
+[![npm downloads](https://img.shields.io/npm/dm/react-native-date-ranger.svg)](https://www.npmjs.com/package/react-native-date-ranger)
+[![license](https://img.shields.io/npm/l/react-native-date-ranger.svg)](https://github.com/ozgurbayram/react-native-date-ranger/blob/main/LICENSE)
+
 A simple date range picker for React Native. No external dependencies, just works.
 
-## Install
+## Installation
 
 ```sh
 npm install react-native-date-ranger
-# or
+```
+
+or
+
+```sh
 yarn add react-native-date-ranger
 ```
+
+📦 [View on npm](https://www.npmjs.com/package/react-native-date-ranger)
 
 ## Basic Usage
 
