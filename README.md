@@ -1,37 +1,83 @@
 # react-native-date-ranger
 
-Date range picker 
+A simple date range picker for React Native. No external dependencies, just works.
 
-## Installation
-
+## Install
 
 ```sh
 npm install react-native-date-ranger
+# or
+yarn add react-native-date-ranger
 ```
 
+## Basic Usage
 
-## Usage
+```tsx
+import DateRangePicker, { DateRange } from 'react-native-date-ranger';
+import { useState } from 'react';
 
+function App() {
+  const [range, setRange] = useState<DateRange>({
+    startDate: null,
+    endDate: null,
+  });
 
-```js
-import { multiply } from 'react-native-date-ranger';
-
-// ...
-
-const result = await multiply(3, 7);
+  return (
+    <DateRangePicker
+      value={range}
+      onChange={setRange}
+    />
+  );
+}
 ```
 
+## Props
 
-## Contributing
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| `value` | `DateRange` | - | Controlled value |
+| `onChange` | `(range: DateRange) => void` | - | Callback when selection changes |
+| `initialMonth` | `Date` | Today | Starting month to display |
+| `showSelectionInfo` | `boolean` | `true` | Show selected range text |
+| `theme` | `DateRangePickerTheme` | - | Custom colors and spacing |
+| `containerStyle` | `ViewStyle` | - | Additional container styles |
+| `weekdays` | `string[]` | `['Sun', 'Mon', ...]` | Custom weekday labels |
+| `months` | `string[]` | `['January', ...]` | Custom month names |
+| `locale` | `string` | `'en-US'` | Locale for date formatting |
+| `selectMonthYearTitle` | `string` | `'Select Month & Year'` | Modal title |
+| `doneButtonText` | `string` | `'Done'` | Done button text |
+| `selectDateRangeText` | `string` | `'Select date range'` | Placeholder text |
+| `selectEndDateText` | `string` | `'Select end date'` | End date placeholder |
 
-- [Development workflow](CONTRIBUTING.md#development-workflow)
-- [Sending a pull request](CONTRIBUTING.md#sending-a-pull-request)
-- [Code of conduct](CODE_OF_CONDUCT.md)
+## Custom Theme
+
+```tsx
+<DateRangePicker
+  value={range}
+  onChange={setRange}
+  theme={{
+    primaryColor: '#FF6B6B',
+    backgroundColor: '#FFFFFF',
+    borderRadius: 16,
+    gap: 10,
+  }}
+/>
+```
+
+## Custom Styling
+
+```tsx
+<DateRangePicker
+  value={range}
+  onChange={setRange}
+  containerStyle={{
+    width: '100%',
+    height: 300,
+    padding: 20,
+  }}
+/>
+```
 
 ## License
 
 MIT
-
----
-
-Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
